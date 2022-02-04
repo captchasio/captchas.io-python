@@ -12,7 +12,7 @@ class ApiException(Exception):
 
 
 class ApiClient():
-    def __init__(self, post_url = '2captcha.com'):
+    def __init__(self, post_url = 'api.captchas.io'):
         self.post_url = post_url
         
         
