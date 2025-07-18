@@ -58,7 +58,7 @@ solver = TwoCaptcha(**config)
 
 |Option|Default value|Description|
 |---|---|---|
-|server|`2captcha.com`|API server. You can set it to `rucaptcha.com` if your account is registered there|
+|server|`api.captchas.io`|API server. You can set it to `api.captchas.io` if your account is registered there|
 |softId|-|your software ID obtained after publishing in [2captcha sofware catalog]|
 |callback|-|URL of your web-sever that receives the captcha recognition result. The URl should be first registered in [pingback settings] of your account|
 |defaultTimeout|120|Polling timeout in seconds for all captcha types except ReCaptcha. Defines how long the module tries to get the answer from `res.php` API endpoint|
@@ -147,48 +147,6 @@ result = solver.hcaptcha(sitekey='10000000-ffff-ffff-ffff-000000000001',
 
 ```
 
-### KeyCaptcha
-Token-based method to solve KeyCaptcha.
-```python
-result = solver.keycaptcha(s_s_c_user_id=10,
-    				   s_s_c_session_id='493e52c37c10c2bcdf4a00cbc9ccd1e8',
-    				   s_s_c_web_server_sign='9006dc725760858e4c0715b835472f22-pz-',
-    				   s_s_c_web_server_sign2='2ca3abe86d90c6142d5571db98af6714',
-    				   url='https://www.keycaptcha.ru/demo-magnetic/', 
-    				   param1=..., ...)
-
-```
-
-### Capy
-Token-based method to bypass Capy puzzle captcha.
-```python
-result = solver.capy(sitekey='PUZZLE_Abc1dEFghIJKLM2no34P56q7rStu8v',
-                     url='http://mysite.com/',
-                     api_server='https://jp.api.capy.me/',
-                     param1=..., ...)
-```
-### Grid
-Grid method is originally called Old ReCaptcha V2 method. The method can be used to bypass any type of captcha where you can apply a grid on image and need to click specific grid boxes. Returns numbers of boxes.
-```python
-result = solver.grid('path/to/captcha.jpg', param1=..., ...)
-```
-### Canvas
-Canvas method can be used when you need to draw a line around an object on image. Returns a set of points' coordinates to draw a polygon.
-```python
-result = solver.canvas('path/to/captcha.jpg', param1=..., ...)
-```
-### ClickCaptcha
-ClickCaptcha method returns coordinates of points on captcha image. Can be used if you need to click on particular points on the image.
-```python
-result = solver.coordinates('path/to/captcha.jpg', param1=..., ...)
-```
-
-### Rotate
-This method can be used to solve a captcha that asks to rotate an object. Mostly used to bypass FunCaptcha. Returns the rotation angle.
-```python
-result = solver.rotate('path/to/captcha.jpg', param1=..., ...)
-```
-
 ## Other methods
 
 ### send / getResult
@@ -266,10 +224,8 @@ async def captchaSolver(image):
 ```
 
 
-[2Captcha]: https://2captcha.com/
-[2captcha sofware catalog]: https://2captcha.com/software
-[pingback settings]: https://2captcha.com/setting/pingback
-[post options]: https://2captcha.com/2captcha-api#normal_post
-[list of supported languages]: https://2captcha.com/2captcha-api#language
+[CAPTCHAs.IO]: https://captchas.io/
+[CAPTCHAs.IO Support]: https://captchas.io/support/
+[CAPTCHAs.IO Resellers]: https://app.captchas.io/resellers/onboard/
 [examples directory]: /examples
 [asyncio]: https://docs.python.org/3/library/asyncio.html
