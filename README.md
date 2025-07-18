@@ -11,23 +11,16 @@ The easiest way to quickly integrate [CAPTCHAs.IO] captcha solving service into 
   - [FunCaptcha](#funcaptcha)
   - [GeeTest](#geetest)
   - [hCaptcha](#hcaptcha)
-  - [KeyCaptcha](#keycaptcha)
-  - [Capy](#capy)
-  - [Grid (ReCaptcha V2 Old Method)](#grid)
-  - [Canvas](#canvas)
-  - [ClickCaptcha](#clickcaptcha)
-  - [Rotate](#rotate)
 - [Other methods](#other-methods)
   - [send / getResult](#send--getresult)
   - [balance](#balance)
-  - [report](#report)
 - [Error handling](#error-handling)
 
 ## Installation
 
 This package can be installed with Pip:
 
-```pip3 install 2captcha-python```
+```pip3 install captchas.io-python```
 
 
 ## Configuration
