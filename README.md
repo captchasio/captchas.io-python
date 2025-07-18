@@ -36,7 +36,7 @@ Also there are few options that can be configured:
 
 ```python 
 config = {
-            'server':           '2captcha.com',
+            'server':           'api.captchas.io',
             'apiKey':           'YOUR_API_KEY',
             'softId':            123,
             'callback':         'https://your.site/result-receiver',
