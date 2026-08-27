@@ -8,19 +8,19 @@ with open("README.md", "r") as fh:
 
 
 def get_version():
-    with open('twocaptcha/__init__.py', 'r') as f:
+    with open('captchasio/__init__.py', 'r') as f:
         return re.search(r'__version__ = ["\'](.*?)["\']', f.read()).group(1)
 
 
-setup(name='2captcha-python',
+setup(name='captchas.io-python',
       version=get_version(),
-      description='Python module for easy integration with 2Captcha API',
+      description='Python library or module integrated with the CAPTCHAs.IO API web service for automating CAPTCHA solving.',
       long_description=long_description,
       long_description_content_type="text/markdown",
-      url='https://github.com/2captcha/2captcha-python/',
+      url='https://github.com/captchasio/captchas.io-python',
       install_requires=['requests'],
-      author='2Captcha',
-      author_email='info@2captcha.com',
+      author='CAPTCHAs.IO',
+      author_email='admin@captchas.io',
       packages=find_packages(),
       include_package_data=True,
       classifiers=[
@@ -28,5 +28,5 @@ setup(name='2captcha-python',
           "License :: OSI Approved :: MIT License",
           "Operating System :: OS Independent",
       ],
-      python_requires='>=3.6',
+      python_requires='>=3.7',
       test_suite='tests')

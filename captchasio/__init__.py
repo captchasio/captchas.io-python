@@ -1,5 +1,5 @@
 from .api import ApiClient
-from .solver import (TwoCaptcha, SolverExceptions, ValidationException,
+from .solver import (CAPTCHAsIO, SolverExceptions, ValidationException,
                      NetworkException, ApiException, TimeoutException)
 
-__version__ = '1.1.2'
+__version__ = '0.1.1'

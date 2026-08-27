@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "captchas.io-python"
+version = "0.1.1"
+authors = [
+  { name="CAPTCHAs.IO", email="admin@captchas.io" },
+]
+description = "Python library for solving CAPTCHAs using the CAPTCHAs.IO APIssS ."
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    # Add any external pip packages your script needs here, e.g.:
+    # "requests>=2.28.0"
+]
+
+[project.scripts]
+run-my-script = "captchas.io-python.main_script:main"

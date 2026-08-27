@@ -1,11 +1,11 @@
 import sys
 '../../' in sys.path or sys.path.append('../../')
 
-from twocaptcha import TwoCaptcha
+from CAPTCHAsIO import CAPTCHAsIO
 
 
 
-sol = TwoCaptcha('YOUR_API_KEY', defaultTimeout=120)
+sol = CAPTCHAsIO('YOUR_API_KEY', defaultTimeout=120)
 
 
 try:

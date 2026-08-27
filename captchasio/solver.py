@@ -33,7 +33,7 @@ class TimeoutException(SolverExceptions):
     pass
 
 
-class TwoCaptcha():
+class CAPTCHAsIO():
     def __init__(self,
                  apiKey,
                  softId=None,
@@ -41,7 +41,7 @@ class TwoCaptcha():
                  defaultTimeout=120,
                  recaptchaTimeout=600,
                  pollingInterval=10,
-                 server = '2captcha.com'):
+                 server = 'api.captchas.io'):
 
         self.API_KEY = apiKey
         self.soft_id = softId
@@ -594,4 +594,4 @@ class TwoCaptcha():
 if __name__ == '__main__':
 
     key = sys.argv[1]
-    sol = TwoCaptcha(key)
+    sol = CAPTCHAsIO(key)

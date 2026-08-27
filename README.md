@@ -25,12 +25,12 @@ This package can be installed with Pip:
 
 ## Configuration
 
-TwoCaptcha instance can be created like this:
+CAPTCHAsIO instance can be created like this:
 
 ```python 
-from twocaptcha import TwoCaptcha
+from CAPTCHAsIO import CAPTCHAsIO
 
-solver = TwoCaptcha('YOUR_API_KEY')
+solver = CAPTCHAsIO('YOUR_API_KEY')
 ```
 Also there are few options that can be configured:
 
@@ -44,10 +44,10 @@ config = {
             'recaptchaTimeout':  600,
             'pollingInterval':   10,
         }
-solver = TwoCaptcha(**config)
+solver = CAPTCHAsIO(**config)
 ```
 
-### TwoCaptcha instance options
+### CAPTCHAsIO instance options
 
 |Option|Default value|Description|
 |---|---|---|
@@ -58,7 +58,7 @@ solver = TwoCaptcha(**config)
 |recaptchaTimeout|600|Polling timeout for ReCaptcha in seconds. Defines how long the module tries to get the answer from `res.php` API endpoint|
 |pollingInterval|10|Interval in seconds between requests to `res.php` API endpoint, setting values less than 5 seconds is not recommended|
 
->  **IMPORTANT:** once `callback` is defined for `TwoCaptcha` instance, all methods return only the captcha ID and DO NOT poll the API to get the result. The result will be sent to the callback URL.
+>  **IMPORTANT:** once `callback` is defined for `CAPTCHAsIO` instance, all methods return only the captcha ID and DO NOT poll the API to get the result. The result will be sent to the callback URL.
 To get the answer manually use [getResult method](#send--getresult)
 
 ## Solve captcha
@@ -205,14 +205,14 @@ You can also make async calls with [asyncio], for example:
 ```python
 import asyncio
 import concurrent.futures
-from twocaptcha import TwoCaptcha
+from CAPTCHAsIO import CAPTCHAsIO
 
 captcha_result = await captchaSolver(image)
 
 async def captchaSolver(image):
     loop = asyncio.get_running_loop()
     with concurrent.future.ThreadPoolExecutor() as pool:
-        result = await loop.run_in_executor(pool, lambda: TwoCaptcha(API_KEY).normal(image))
+        result = await loop.run_in_executor(pool, lambda: CAPTCHAsIO(API_KEY).normal(image))
         return result
 ```
 
